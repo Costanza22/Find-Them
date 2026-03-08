@@ -1,5 +1,7 @@
 # FindThem
 
+**Trabalho de Conclusão de Curso (TCC)** — Especialização em Inteligência Artificial, UFPR (Universidade Federal do Paraná).
+
 Sistema assistido por IA para apoiar a identificação de pessoas desaparecidas usando reconhecimento facial e visão computacional.
 
 - **Front-end:** React — registro de casos, envio de avistamentos, visualização de possíveis correspondências.
