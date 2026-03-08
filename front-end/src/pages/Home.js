@@ -4,26 +4,28 @@ import './Home.css';
 export default function Home() {
   return (
     <div className="page home-page">
-      <h1>FindThem</h1>
-      <p className="home-intro">
-        Help reunite missing persons with their families. Register a missing person,
-        report a sighting with a photo, or review possible matches.
-      </p>
+      <header className="page-header">
+        <h1>FindThem</h1>
+        <p className="home-intro">
+          Case file system for missing persons. Register a case, file a sighting report,
+          or review cross-reference matches from the archive.
+        </p>
+      </header>
       <div className="home-actions">
         <Link to="/register" className="home-card">
-          <span className="home-card-icon">👤</span>
-          <span className="home-card-title">Register a missing person</span>
-          <span className="home-card-desc">Add photo and details to the database</span>
+          <span className="home-card-label">Case file</span>
+          <span className="home-card-title">Register missing person</span>
+          <span className="home-card-desc">Add photo and details to the registry</span>
         </Link>
         <Link to="/sighting" className="home-card">
-          <span className="home-card-icon">📷</span>
-          <span className="home-card-title">Report a sighting</span>
-          <span className="home-card-desc">Upload an image of a possible sighting</span>
+          <span className="home-card-label">Report</span>
+          <span className="home-card-title">File a sighting</span>
+          <span className="home-card-desc">Submit an image for cross-reference</span>
         </Link>
         <Link to="/matches" className="home-card">
-          <span className="home-card-icon">🔍</span>
-          <span className="home-card-title">View matches</span>
-          <span className="home-card-desc">See possible matches and similarity scores</span>
+          <span className="home-card-label">Archive</span>
+          <span className="home-card-title">Review matches</span>
+          <span className="home-card-desc">Possible matches and similarity scores</span>
         </Link>
       </div>
     </div>

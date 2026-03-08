@@ -18,6 +18,17 @@ export default function Layout() {
       <main className="layout-main">
         <Outlet />
       </main>
+      <footer className="layout-footer">
+        <a
+          href="https://int-missing.fandom.com/wiki/International_Missing_Persons_Wiki"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          International Missing Persons Wiki
+        </a>
+        <span className="layout-footer-sep"> · </span>
+        <span>Reference &amp; awareness</span>
+      </footer>
     </div>
   );
 }

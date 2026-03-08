@@ -9,10 +9,13 @@ export default function ReportSighting() {
 
   return (
     <div className="page">
-      <h1>Report a sighting</h1>
-      <p className="page-intro">
-        Upload a photo of a possible sighting. It will be compared with registered missing persons.
-      </p>
+      <header className="page-header">
+        <span className="page-label">Report</span>
+        <h1>File a sighting</h1>
+        <p className="page-intro">
+          Submit an image for comparison against the missing-persons registry.
+        </p>
+      </header>
       <SightingUpload onSubmit={handleSubmit} />
     </div>
   );

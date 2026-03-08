@@ -48,9 +48,9 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
   if (submitted) {
     return (
       <div className="form-success">
-        <p>Missing person registered successfully.</p>
+        <p>Case filed. Entry added to registry.</p>
         <button type="button" onClick={resetForm} className="btn btn-secondary">
-          Register another
+          File another case
         </button>
       </div>
     );

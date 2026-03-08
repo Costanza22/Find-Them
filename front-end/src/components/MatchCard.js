@@ -14,7 +14,7 @@ export default function MatchCard({ match }) {
     <article className="match-card">
       <div className="match-card-images">
         <div className="match-card-image-block">
-          <span className="match-card-label">Missing person</span>
+          <span className="match-card-label">Registry entry</span>
           {missingPerson.photoUrl ? (
             <img src={missingPerson.photoUrl} alt={missingPerson.name} />
           ) : (
@@ -24,7 +24,7 @@ export default function MatchCard({ match }) {
         </div>
         <div className="match-card-vs">↔</div>
         <div className="match-card-image-block">
-          <span className="match-card-label">Sighting</span>
+          <span className="match-card-label">Sighting report</span>
           {sighting.imageUrl ? (
             <img src={sighting.imageUrl} alt="Sighting" />
           ) : (

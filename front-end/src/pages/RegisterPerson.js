@@ -9,10 +9,13 @@ export default function RegisterPerson() {
 
   return (
     <div className="page">
-      <h1>Register a missing person</h1>
-      <p className="page-intro">
-        Add a missing person to the database with a photo and details. This helps match sightings later.
-      </p>
+      <header className="page-header">
+        <span className="page-label">Case file</span>
+        <h1>Register missing person</h1>
+        <p className="page-intro">
+          Add photo and details to the registry for cross-reference with sighting reports.
+        </p>
+      </header>
       <MissingPersonForm onSubmit={handleSubmit} />
     </div>
   );
