@@ -1,18 +1,20 @@
+/* Cross-reference slip / match report */
+
 .match-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 1rem;
+  background: var(--paper-elevated);
+  border: var(--rule);
+  border-left: 4px solid var(--ink);
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .match-card-images {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -24,80 +26,96 @@
 }
 
 .match-card-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #666;
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-bottom: 0.4rem;
 }
 
 .match-card-image-block img {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 8px;
-  background: #f0f0f0;
+  border: var(--rule);
+  background: var(--paper);
 }
 
 .match-card-placeholder {
   width: 100px;
   height: 100px;
-  border-radius: 8px;
-  background: #e8e8e8;
+  border: var(--rule);
+  background: var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  color: #888;
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .match-card-name {
-  font-weight: 600;
-  margin-top: 0.35rem;
-  color: #1a1a2e;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  color: var(--ink);
 }
 
 .match-card-meta {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-top: 0.2rem;
 }
 
 .match-card-vs {
-  color: #999;
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  color: var(--paper-border);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .match-card-score-wrap {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  padding-top: 0.5rem;
+  border-top: var(--rule);
 }
 
+/* Stamp-like score badge */
 .match-card-score {
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
   font-weight: 700;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  border: 2px solid currentColor;
+  color: var(--ink);
 }
 
 .match-card-tier {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
 }
 
 .score-high {
-  background: #e8f5e9;
-  color: #2e7d32;
+  border-color: var(--filed);
+  color: var(--filed);
 }
 
 .score-medium {
-  background: #fff8e1;
-  color: #f57c00;
+  border-color: var(--ink-muted);
+  color: var(--ink-muted);
 }
 
 .score-low {
-  background: #f5f5f5;
-  color: #616161;
+  border-color: var(--ink-faint);
+  color: var(--ink-faint);
 }

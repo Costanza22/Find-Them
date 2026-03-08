@@ -1,37 +1,61 @@
+/* Sighting report form */
+
 .sighting-upload-form .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .sighting-upload-form label {
   display: block;
-  font-weight: 500;
-  margin-bottom: 0.35rem;
-  color: #333;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-bottom: 0.4rem;
 }
 
 .sighting-upload-form input[type="text"],
 .sighting-upload-form textarea {
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 0.5rem 0 0.4rem;
+  border: none;
+  border-bottom: var(--rule-ink);
+  background: transparent;
+  font-family: var(--font-body);
   font-size: 1rem;
+  color: var(--ink);
   box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.sighting-upload-form input::placeholder,
+.sighting-upload-form textarea::placeholder {
+  color: var(--ink-faint);
+}
+
+.sighting-upload-form input:focus,
+.sighting-upload-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--tape);
 }
 
 .drop-zone {
-  border: 2px dashed #ccc;
-  border-radius: 8px;
+  border: 2px dashed var(--paper-border);
+  background: var(--paper-elevated);
   padding: 2rem;
   text-align: center;
-  background: #fafafa;
   cursor: pointer;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .drop-zone:hover,
 .drop-zone.has-image {
-  border-color: #1a1a2e;
-  background: #f5f5f5;
+  border-color: var(--ink-muted);
+  background: #fff;
 }
 
 .drop-zone input[type="file"] {
@@ -44,40 +68,37 @@
   cursor: pointer;
 }
 
-.drop-zone {
-  position: relative;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .drop-zone-text {
-  color: #666;
-  font-size: 0.95rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
 }
 
 .sighting-preview {
   max-width: 100%;
   max-height: 280px;
   object-fit: contain;
-  border-radius: 8px;
+  border: var(--rule);
 }
 
 .sighting-upload-form .form-actions {
   display: flex;
   gap: 0.75rem;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: var(--rule);
 }
 
 .sighting-upload-form .form-success {
   text-align: center;
   padding: 2rem;
-  background: #e8f5e9;
-  border-radius: 8px;
-  color: #2e7d32;
+  background: var(--paper-elevated);
+  border: var(--rule);
+  border-left: 4px solid var(--filed);
+  color: var(--filed);
 }
 
 .sighting-upload-form .form-success p {
   margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
 }

@@ -52,17 +52,20 @@ export default function Matches() {
   const matches = MOCK_MATCHES;
 
   return (
-    <div className="page">
-      <h1>Possible matches</h1>
-      <p className="page-intro">
-        Sightings compared with registered missing persons. Higher scores indicate stronger similarity.
-      </p>
+    <div className="page matches-page">
+      <header className="page-header">
+        <span className="page-label">Archive</span>
+        <h1>Cross-reference matches</h1>
+        <p className="page-intro">
+          Sightings matched to registry entries. Higher score indicates stronger facial similarity.
+        </p>
+      </header>
 
       {matches.length === 0 ? (
         <div className="matches-empty">
-          <p>No matches yet.</p>
+          <p>No matches on file.</p>
           <p className="matches-empty-hint">
-            Register missing persons and report sightings to see possible matches here.
+            Register cases and file sighting reports to generate cross-reference matches.
           </p>
         </div>
       ) : (

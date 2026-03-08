@@ -50,9 +50,9 @@ export default function SightingUpload({ onSubmit, onCancel }) {
   if (submitted) {
     return (
       <div className="form-success">
-        <p>Sighting report submitted. It will be compared against registered missing persons.</p>
+        <p>Report filed. Image submitted for cross-reference.</p>
         <button type="button" onClick={resetForm} className="btn btn-secondary">
-          Report another sighting
+          File another report
         </button>
       </div>
     );
