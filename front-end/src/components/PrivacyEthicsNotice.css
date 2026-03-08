@@ -1,0 +1,127 @@
+.privacy-ethics-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  margin: 0;
+  border: none;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background: var(--paper-elevated);
+  overflow: hidden;
+}
+
+.privacy-ethics-overlay::backdrop {
+  background: var(--paper-elevated);
+}
+
+.privacy-ethics-modal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--paper-elevated);
+  border-left: 4px solid var(--tape);
+  padding: 1.5rem 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.privacy-ethics-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.privacy-ethics-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.privacy-ethics-content p {
+  margin: 0 0 0.75rem;
+}
+
+.privacy-ethics-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.privacy-ethics-content ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.privacy-ethics-content li {
+  margin-bottom: 0.6rem;
+}
+
+.privacy-ethics-content li:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-ethics-footer {
+  margin-top: 1rem !important;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.privacy-ethics-actions {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.privacy-ethics-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.privacy-ethics-checkbox input {
+  margin-top: 0.25rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--tape);
+  cursor: pointer;
+}
+
+.privacy-ethics-btn {
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--paper-elevated);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.privacy-ethics-btn:hover:not(:disabled) {
+  background: var(--tape);
+  border-color: var(--tape);
+}
+
+.privacy-ethics-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
