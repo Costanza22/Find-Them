@@ -1,0 +1,103 @@
+.match-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.match-card-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.match-card-image-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.match-card-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  margin-bottom: 0.35rem;
+}
+
+.match-card-image-block img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f0f0f0;
+}
+
+.match-card-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.match-card-name {
+  font-weight: 600;
+  margin-top: 0.35rem;
+  color: #1a1a2e;
+}
+
+.match-card-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.match-card-vs {
+  color: #999;
+  font-size: 1.25rem;
+}
+
+.match-card-score-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.match-card-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.match-card-tier {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.score-high {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.score-medium {
+  background: #fff8e1;
+  color: #f57c00;
+}
+
+.score-low {
+  background: #f5f5f5;
+  color: #616161;
+}

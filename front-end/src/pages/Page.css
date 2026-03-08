@@ -1,0 +1,15 @@
+.page {
+  padding: 0 0 2rem;
+}
+
+.page h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+}
+
+.page-intro {
+  margin: 0 0 1.5rem;
+  color: #555;
+  line-height: 1.5;
+}

@@ -1,0 +1,22 @@
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.matches-empty {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #f5f5f5;
+  border-radius: 12px;
+  color: #666;
+}
+
+.matches-empty p {
+  margin: 0 0 0.5rem;
+}
+
+.matches-empty-hint {
+  font-size: 0.95rem;
+  color: #888;
+}
