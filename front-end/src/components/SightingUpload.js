@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import './SightingUpload.css';
 
-export default function SightingUpload({ onSubmit, onCancel }) {
+export default function SightingUpload({ onSubmit, onCancel, loading = false, error = null, setError }) {
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [notes, setNotes] = useState('');
   const [location, setLocation] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [localError, setLocalError] = useState(null);
+  const err = error ?? localError;
+  const clearError = () => { setError?.(null); setLocalError(null); };
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
@@ -27,16 +30,24 @@ export default function SightingUpload({ onSubmit, onCancel }) {
 
   const handleDragOver = (e) => e.preventDefault();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!imageFile) return;
+    clearError();
+    if (!imageFile) {
+      setLocalError('Imagem é obrigatória.');
+      return;
+    }
     const payload = {
       imageFile,
       notes: notes.trim() || undefined,
       location: location.trim() || undefined,
     };
-    onSubmit?.(payload);
-    setSubmitted(true);
+    try {
+      await onSubmit?.(payload);
+      setSubmitted(true);
+    } catch (err) {
+      setLocalError(err.message || 'Não foi possível enviar. Tente de novo.');
+    }
   };
 
   const resetForm = () => {
@@ -60,6 +71,11 @@ export default function SightingUpload({ onSubmit, onCancel }) {
 
   return (
     <form onSubmit={handleSubmit} className="sighting-upload-form">
+      {err && (
+        <div className="form-error" role="alert">
+          {err}
+        </div>
+      )}
       <div className="form-group">
         <label>Sighting image *</label>
         <div
@@ -104,8 +120,8 @@ export default function SightingUpload({ onSubmit, onCancel }) {
       </div>
 
       <div className="form-actions">
-        <button type="submit" className="btn btn-primary" disabled={!imageFile}>
-          Submit sighting
+        <button type="submit" className="btn btn-primary" disabled={!imageFile || loading}>
+          {loading ? 'Enviando…' : 'Submit sighting'}
         </button>
         {onCancel && (
           <button type="button" onClick={onCancel} className="btn btn-secondary">

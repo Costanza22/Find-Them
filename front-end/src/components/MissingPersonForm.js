@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './MissingPersonForm.css';
 
-export default function MissingPersonForm({ onSubmit, onCancel }) {
+export default function MissingPersonForm({ onSubmit, onCancel, loading = false, error = null, setError }) {
   const [name, setName] = useState('');
   const [photoFile, setPhotoFile] = useState(null);
   const [photoPreview, setPhotoPreview] = useState(null);
@@ -10,6 +10,9 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
   const [lastSeen, setLastSeen] = useState('');
   const [contactInfo, setContactInfo] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [localError, setLocalError] = useState(null);
+  const err = error ?? localError;
+  const clearError = () => { setError?.(null); setLocalError(null); };
 
   const handlePhotoChange = (e) => {
     const file = e.target.files?.[0];
@@ -19,9 +22,17 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    clearError();
+    if (!name.trim()) {
+      setLocalError('Nome é obrigatório.');
+      return;
+    }
+    if (!photoFile) {
+      setLocalError('Foto é obrigatória.');
+      return;
+    }
     const payload = {
       name: name.trim(),
       description: description.trim() || undefined,
@@ -30,8 +41,12 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
       contactInfo: contactInfo.trim() || undefined,
       photoFile,
     };
-    onSubmit?.(payload);
-    setSubmitted(true);
+    try {
+      await onSubmit?.(payload);
+      setSubmitted(true);
+    } catch (err) {
+      setLocalError(err.message || 'Não foi possível registrar. Tente de novo.');
+    }
   };
 
   const resetForm = () => {
@@ -58,6 +73,11 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
 
   return (
     <form onSubmit={handleSubmit} className="missing-person-form">
+      {err && (
+        <div className="form-error" role="alert">
+          {err}
+        </div>
+      )}
       <div className="form-group">
         <label htmlFor="name">Full name *</label>
         <input
@@ -71,7 +91,7 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
       </div>
 
       <div className="form-group">
-        <label>Photo</label>
+        <label>Photo *</label>
         <div className="photo-upload">
           <input
             type="file"
@@ -132,8 +152,8 @@ export default function MissingPersonForm({ onSubmit, onCancel }) {
       </div>
 
       <div className="form-actions">
-        <button type="submit" className="btn btn-primary" disabled={!name.trim()}>
-          Register
+        <button type="submit" className="btn btn-primary" disabled={!name.trim() || !photoFile || loading}>
+          {loading ? 'Enviando…' : 'Register'}
         </button>
         {onCancel && (
           <button type="button" onClick={onCancel} className="btn btn-secondary">

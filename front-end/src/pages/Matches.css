@@ -25,6 +25,39 @@
   color: var(--ink-muted);
 }
 
+.matches-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-end;
+}
+
+.matches-filter-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.matches-filter-input,
+.matches-filter-select {
+  padding: 0.4rem 0.6rem;
+  border: var(--rule);
+  background: var(--paper-elevated);
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+.matches-loading {
+  color: var(--ink-muted);
+  margin: 1.5rem 0;
+}
+
 .matches-page .page-label {
   margin-bottom: 0.35rem;
 }

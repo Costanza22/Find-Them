@@ -1,5 +1,14 @@
 /* Official form / case file fields */
 
+.form-error {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #fde8e8;
+  border-left: 4px solid var(--tape);
+  color: #8b2942;
+  font-size: 0.9rem;
+}
+
 .missing-person-form .form-group {
   margin-bottom: 1.25rem;
 }
