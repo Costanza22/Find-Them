@@ -39,3 +39,12 @@
   color: var(--ink-muted);
   line-height: 1.6;
 }
+
+@media (max-width: 640px) {
+  .page h1 {
+    font-size: 1.25rem;
+  }
+  .page-intro {
+    font-size: 0.88rem;
+  }
+}

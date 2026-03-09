@@ -61,3 +61,14 @@
 .matches-page .page-label {
   margin-bottom: 0.35rem;
 }
+
+@media (max-width: 480px) {
+  .matches-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .matches-filter-input,
+  .matches-filter-select {
+    width: 100%;
+  }
+}

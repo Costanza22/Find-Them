@@ -8,7 +8,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  animation: fadeInUp 0.4s ease-out both;
 }
+
+.matches-list .match-card:nth-child(1) { animation-delay: 0s; }
+.matches-list .match-card:nth-child(2) { animation-delay: 0.08s; }
+.matches-list .match-card:nth-child(3) { animation-delay: 0.16s; }
+.matches-list .match-card:nth-child(4) { animation-delay: 0.24s; }
 
 .match-card-images {
   display: flex;
@@ -118,4 +124,21 @@
 .score-low {
   border-color: var(--ink-faint);
   color: var(--ink-faint);
+}
+
+@media (max-width: 480px) {
+  .match-card {
+    padding: 0.75rem;
+  }
+  .match-card-images {
+    gap: 0.75rem;
+  }
+  .match-card-image-block img,
+  .match-card-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  .match-card-score {
+    font-size: 1rem;
+  }
 }
