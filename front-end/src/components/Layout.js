@@ -1,7 +1,10 @@
 import { Outlet, NavLink } from 'react-router';
+import useTheme from '../hooks/useTheme';
 import './Layout.css';
 
 export default function Layout() {
+  const { theme, toggle } = useTheme();
+
   return (
     <div className="layout">
       <header className="layout-header">
@@ -15,6 +18,14 @@ export default function Layout() {
           <NavLink to="/sighting">Report Sighting</NavLink>
           <NavLink to="/matches">Matches</NavLink>
         </nav>
+        <button
+          className="theme-toggle"
+          onClick={toggle}
+          aria-label={theme === 'light' ? 'Ativar modo escuro' : 'Ativar modo claro'}
+          title={theme === 'light' ? 'Modo escuro' : 'Modo claro'}
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
       </header>
       <main className="layout-main">
         <Outlet />

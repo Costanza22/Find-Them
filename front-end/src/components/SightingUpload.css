@@ -3,9 +3,9 @@
 .sighting-upload-form .form-error {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  background: #fde8e8;
+  background: var(--error-bg);
   border-left: 4px solid var(--tape);
-  color: #8b2942;
+  color: var(--error-ink);
   font-size: 0.9rem;
 }
 
@@ -64,7 +64,7 @@
 .drop-zone:hover,
 .drop-zone.has-image {
   border-color: var(--ink-muted);
-  background: #fff;
+  background: var(--paper);
 }
 
 .drop-zone input[type="file"] {

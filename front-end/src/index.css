@@ -26,6 +26,35 @@
   --rule-ink: 1px solid var(--ink);
   --radius-none: 0;
   --radius-tight: 2px;
+  /* Skeleton */
+  --skeleton-base: #ddd6cb;
+  --skeleton-shine: #e8e2d8;
+  /* Error */
+  --error-bg: #fde8e8;
+  --error-ink: #8b2942;
+}
+
+[data-theme="dark"] {
+  --paper: #1a1a1f;
+  --paper-elevated: #242429;
+  --paper-border: #3a3a42;
+  --ink: #e0ddd6;
+  --ink-muted: #a8a49c;
+  --ink-faint: #7a776f;
+  --tape: #d4627a;
+  --tape-muted: #b87a8a;
+  --filed: #6ab06e;
+  --filed-muted: #7a9a7c;
+  --header-bg: #111114;
+  --header-ink: #e0ddd6;
+  --header-ink-muted: #8a877f;
+  --header-accent: #d4627a;
+  --rule: 1px solid var(--paper-border);
+  --rule-ink: 1px solid var(--ink-muted);
+  --skeleton-base: #2e2e35;
+  --skeleton-shine: #3a3a42;
+  --error-bg: #3a1a22;
+  --error-ink: #e88a9a;
 }
 
 * {
@@ -53,6 +82,10 @@ body::before {
   z-index: 0;
 }
 
+[data-theme="dark"] body::before {
+  opacity: 0.015;
+}
+
 #root {
   position: relative;
   z-index: 1;
@@ -77,4 +110,32 @@ a {
 
 a:hover {
   color: var(--tape);
+}
+
+/* === Animations === */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.page {
+  animation: fadeIn 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page, .home-card, .registry-card, .match-card {
+    animation: none !important;
+  }
 }
