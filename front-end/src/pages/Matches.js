@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import MatchCard from '../components/MatchCard';
+import { SkeletonMatchList } from '../components/Skeleton';
 import { apiFetch } from '../api/client';
 import './Page.css';
 import './Matches.css';
@@ -98,7 +99,7 @@ export default function Matches() {
       )}
 
       {loading ? (
-        <p className="matches-loading">Carregando…</p>
+        <SkeletonMatchList count={3} />
       ) : matches.length === 0 ? (
         <div className="matches-empty">
           <p>No matches on file.</p>

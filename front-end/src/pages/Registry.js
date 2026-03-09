@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { apiFetch } from '../api/client';
+import { SkeletonRegistryGrid } from '../components/Skeleton';
 import './Page.css';
 import './Registry.css';
 
@@ -38,7 +39,7 @@ export default function Registry() {
         <div className="form-error" role="alert">{error}</div>
       )}
 
-      {loading && <p className="registry-loading">Carregando…</p>}
+      {loading && <SkeletonRegistryGrid count={6} />}
       {!loading && persons.length === 0 && (
         <div className="registry-empty">
           <p>Nenhum caso no registro.</p>
