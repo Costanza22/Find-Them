@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MissingPersonForm from '../components/MissingPersonForm';
-import { apiFetch, apiUrl, validatePhoto } from '../api/client';
+import { apiUrl, validatePhoto } from '../api/client';
 import './Page.css';
 
 export default function RegisterPerson() {
