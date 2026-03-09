@@ -11,6 +11,7 @@ export default function Layout() {
         <nav className="layout-nav">
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/register">Register</NavLink>
+          <NavLink to="/registry">Registry</NavLink>
           <NavLink to="/sighting">Report Sighting</NavLink>
           <NavLink to="/matches">Matches</NavLink>
         </nav>

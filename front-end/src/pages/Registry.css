@@ -1,0 +1,72 @@
+.registry-loading {
+  color: var(--ink-muted);
+  margin: 1.5rem 0;
+}
+
+.registry-empty {
+  padding: 2rem;
+  text-align: center;
+  background: var(--paper-elevated);
+  border: var(--rule);
+}
+
+.registry-empty p {
+  margin: 0 0 0.35rem;
+}
+
+.registry-empty-hint {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.registry-card {
+  background: var(--paper-elevated);
+  border: var(--rule);
+  border-left: 4px solid var(--tape);
+  overflow: hidden;
+}
+
+.registry-card-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registry-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.registry-card-no-photo {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+.registry-card-body {
+  padding: 0.75rem 1rem;
+}
+
+.registry-card-name {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.registry-card-meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}

@@ -4,6 +4,7 @@ import PrivacyEthicsNotice from './components/PrivacyEthicsNotice';
 import Home from './pages/Home';
 import RegisterPerson from './pages/RegisterPerson';
 import ReportSighting from './pages/ReportSighting';
+import Registry from './pages/Registry';
 import Matches from './pages/Matches';
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="register" element={<RegisterPerson />} />
+            <Route path="registry" element={<Registry />} />
             <Route path="sighting" element={<ReportSighting />} />
             <Route path="matches" element={<Matches />} />
           </Route>
